@@ -1,7 +1,7 @@
 context:
   name: docling-core
   version: 2.4.0
-  python_min: "3.9" # remove this line once https://github.com/prefix-dev/rattler-build/pull/1122 is available
+  python_min: "3.9"
 
 package:
   name: ${{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: 93f817b0105d564bbd334f8314b359b8a3fb234ec47b5013a020c9cb6ebd2e87
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -40,7 +40,7 @@ tests:
       imports:
         - docling_core
       pip_check: true
-      # python_version: ${{ python_min }}  # need rattler-build >=0.31.0
+      python_version: ${{ python_min }}
   - script:
       - validate --help
       - generate_jsonschema --help

@@ -45,6 +45,9 @@ tests:
       - validate --help
       - generate_jsonschema --help
       - generate_docs --help
+    requirements:
+      run:
+        - python ${{ python_min }}
 
 about:
   summary: A python library to define and validate data types in Docling.

@@ -1,6 +1,6 @@
 context:
   name: docling-core
-  version: 2.3.1
+  version: 2.4.0
   python_min: "3.9" # remove this line once https://github.com/prefix-dev/rattler-build/pull/1122 is available
 
 package:
@@ -9,10 +9,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_core-${{ version }}.tar.gz
-  sha256: b32f588fc869b9cc633da7095fa8b8277b8f9f0f3e6c9e000f3e16266dc9599d
+  sha256: 93f817b0105d564bbd334f8314b359b8a3fb234ec47b5013a020c9cb6ebd2e87
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: python -m pip install . -vv --no-deps --no-build-isolation
   python:
@@ -28,18 +28,18 @@ requirements:
     - pip
   run:
     - python >=${{ python_min }}
-    - jsonschema >=4.16
-    - pydantic >=2.6
-    - jsonref >=1.1
-    - tabulate >=0.9
-    - pandas >=2.1.4
-    - pillow >=10.3
+    - jsonschema >=4.16.0,<5.0.0
+    - pydantic >=2.6.0,<3.0.0
+    - jsonref >=1.1.0,<2.0.0
+    - tabulate >=0.8.0,<0.10.0
+    - pandas >=2.1.4,<3.0.0
+    - pillow >=10.3.0,<11.0.0
 
 tests:
   - python:
       imports:
         - docling_core
-      pip_check: false
+      pip_check: true
   - script:
       - validate --help
       - generate_jsonschema --help

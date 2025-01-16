@@ -1,7 +1,6 @@
 context:
   name: docling-core
-  version: 2.4.0
-  python_min: "3.9"
+  version: 2.14.0
 
 package:
   name: ${{ name|lower }}
@@ -9,21 +8,22 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_core-${{ version }}.tar.gz
-  sha256: 93f817b0105d564bbd334f8314b359b8a3fb234ec47b5013a020c9cb6ebd2e87
+  sha256: 0eb6a52e05f2a06e1777b0533d655a87b54a1a5d374b957beb244c8940aed7da
 
 build:
-  number: 1
+  number: 0
   noarch: python
-  script: python -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   python:
     entry_points:
       - validate = docling_core.utils.validate:main
       - generate_jsonschema = docling_core.utils.generate_jsonschema:main
       - generate_docs = docling_core.utils.generate_docs:main
+      - docling-view = docling_core.cli.view:app
 
 requirements:
   host:
-    - python ${{ python_min }}
+    - python ${{ python_min }}.*
     - poetry-core >=1.0.0
     - pip
   run:
@@ -31,23 +31,29 @@ requirements:
     - jsonschema >=4.16.0,<5.0.0
     - pydantic >=2.6.0,<3.0.0
     - jsonref >=1.1.0,<2.0.0
-    - tabulate >=0.8.0,<0.10.0
+    - tabulate >=0.9.0,<1.0.0
     - pandas >=2.1.4,<3.0.0
     - pillow >=10.3.0,<11.0.0
+    - pyyaml >=5.1,<7.0.0
+    - typing-extensions >=4.12.2,<5.0.0
+    - transformers >=4.34.0,<5.0.0
+    - semchunk >=2.2.0,<3.0.0
+    - typer >=0.12.5,<0.13.0
 
 tests:
   - python:
       imports:
         - docling_core
       pip_check: true
-      python_version: ${{ python_min }}
+      python_version: ${{ python_min }}.*
   - script:
       - validate --help
       - generate_jsonschema --help
       - generate_docs --help
+      - docling-view --help
     requirements:
       run:
-        - python ${{ python_min }}
+        - python ${{ python_min }}.*
 
 about:
   summary: A python library to define and validate data types in Docling.

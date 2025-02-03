@@ -39,6 +39,7 @@ requirements:
     - transformers >=4.34.0,<5.0.0
     - semchunk >=2.2.0,<3.0.0
     - typer >=0.12.5,<0.13.0
+    - latex2mathml >=3.77.0,<4.0.0
 
 tests:
   - python:

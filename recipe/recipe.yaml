@@ -60,7 +60,7 @@ about:
   summary: A python library to define and validate data types in Docling.
   license: MIT
   license_file: LICENSE
-  homepage: https://ds4sd.github.io/
+  homepage: https://github.com/docling-project/docling-core
 
 extra:
   recipe-maintainers:

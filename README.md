@@ -3,7 +3,7 @@ About docling-core-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/docling-core-feedstock/blob/main/LICENSE.txt)
 
-Home: https://ds4sd.github.io/
+Home: https://github.com/docling-project/docling-core
 
 Package license: MIT
 

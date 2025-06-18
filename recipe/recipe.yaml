@@ -1,6 +1,6 @@
 context:
   name: docling-core
-  version: "2.37.0"
+  version: "2.38.0"
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_core-${{ version }}.tar.gz
-  sha256: b92c1b573045fbbd446ec9d28e68704d3528825a220b735538f3cd8883c2a9f2
+  sha256: 3bad4c476cc798e29d01b02ea383b5582d7031e9595b177be0a9450f2eb7bef6
 
 build:
   number: 0

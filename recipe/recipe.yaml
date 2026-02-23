@@ -1,6 +1,6 @@
 context:
   name: docling-core
-  version: "2.44.2"
+  version: 2.65.2
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_core-${{ version }}.tar.gz
-  sha256: de75ee451e62eb211069ce411b143dff463a8d779b23b771a8cde450957ff861
+  sha256: 4afc4c3ca8eaa8c0829aade53efe9692c1ad50763c6a64614fcb8c4b75bbcd7c
 
 build:
   number: 0
@@ -29,18 +29,16 @@ requirements:
   run:
     - python >=${{ python_min }}
     - jsonschema >=4.16.0,<5.0.0
-    - pydantic >=2.6.0,<3.0.0
+    - pydantic >=2.6.0,<3.0.0,!=2.10.0,!=2.10.1,!=2.10.2
     - jsonref >=1.1.0,<2.0.0
-    - tabulate >=0.9.0,<1.0.0
+    - tabulate >=0.9.0,<0.10.0
     - pandas >=2.1.4,<3.0.0
-    - pillow >=10.0.0,<12.0.0
+    - pillow >=10.0.0,<13.0.0
     - pyyaml >=5.1,<7.0.0
-    - typing-extensions >=4.12.2,<5.0.0
-    - transformers >=4.34.0,<5.0.0
-    - semchunk >=2.2.0,<3.0.0
-    - typer >=0.12.5,<0.16.0
+    - typer >=0.12.5,<0.22.0
     - latex2mathml >=3.77.0,<4.0.0
-
+    - defusedxml >=0.7.1,<0.8.0
+    - typing_extensions >=4.12.2,<5.0.0
 tests:
   - python:
       imports:

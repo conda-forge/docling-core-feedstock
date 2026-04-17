@@ -1,6 +1,6 @@
 context:
   name: docling-core
-  version: 2.73.0
+  version: 2.74.0
 
 package:
   name: ${{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_core-${{ version }}.tar.gz
-  sha256: 33ffc2b2bf736ed0e079bba296081a26885f6cb08081c828d630ca85a51e22e0
+  sha256: e8beb0b84a033c814386b1d990e73cb1c68c6485906c78c841b901577c705dc0
 
 build:
   number: 0
@@ -39,8 +39,6 @@ requirements:
     - latex2mathml >=3.77.0,<4.0.0
     - defusedxml >=0.7.1,<0.8.0
     - typing_extensions >=4.12.2,<5.0.0
-    - transformers >=4.34.0,<6.0.0
-    - semchunk >=2.2.0,<4.0.0
 tests:
   - python:
       imports:

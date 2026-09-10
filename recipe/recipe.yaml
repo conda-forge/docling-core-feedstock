@@ -46,7 +46,9 @@ tests:
       imports:
         - docling_core
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - docling-view --help
       - docling-serialize --help

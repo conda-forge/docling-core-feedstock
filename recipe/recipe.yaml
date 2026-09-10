@@ -1,14 +1,13 @@
 context:
-  name: docling-core
-  version: 2.90.0
+  version: "2.96.0"
 
 package:
-  name: ${{ name|lower }}
+  name: docling-core
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/docling_core-${{ version }}.tar.gz
-  sha256: 55eda84a4a1822cca4c9259e0b7682477b56bd7db02763e4bccb9fafffe4e10b
+  url: https://pypi.org/packages/source/d/docling-core/docling_core-${{ version }}.tar.gz
+  sha256: 6285b2a461a830a7b4da052fef5253a08a141be46ef8a1ce9b4b47b92323b700
 
 build:
   number: 0
@@ -38,15 +37,17 @@ requirements:
     - latex2mathml >=3.77.0,<4.0.0
     - defusedxml >=0.7.1,<0.8.0
     - pydantic-settings >=2.14.0
-    - transformers >=4.34.0,<5.9.0,!=5.0.*,!=5.1.*,!=5.2.*,!=5.3.*
-    - semchunk >=2.2.0,<4.0.0
     - doclang >=0.7,<0.8
+    # missing upstream, https://github.com/docling-project/docling-core/pull/764
+    - requests
 tests:
   - python:
       imports:
         - docling_core
       pip_check: true
-      python_version: ${{ python_min }}.*
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
   - script:
       - docling-view --help
       - docling-serialize --help
@@ -63,3 +64,4 @@ about:
 extra:
   recipe-maintainers:
     - kklein
+    - mgorny

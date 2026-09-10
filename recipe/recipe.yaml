@@ -39,6 +39,8 @@ requirements:
     - defusedxml >=0.7.1,<0.8.0
     - pydantic-settings >=2.14.0
     - doclang >=0.7,<0.8
+    # missing upstream, https://github.com/docling-project/docling-core/pull/764
+    - requests
 tests:
   - python:
       imports:

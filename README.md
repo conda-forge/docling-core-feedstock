@@ -189,4 +189,5 @@ Feedstock Maintainers
 =====================
 
 * [@kklein](https://github.com/kklein/)
+* [@mgorny](https://github.com/mgorny/)
 

@@ -1,5 +1,5 @@
 context:
-  version: "2.96.0"
+  version: 2.96.1
 
 package:
   name: docling-core
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/docling-core/docling_core-${{ version }}.tar.gz
-  sha256: 6285b2a461a830a7b4da052fef5253a08a141be46ef8a1ce9b4b47b92323b700
+  sha256: 1d33be46d1a284585df0b8f57f5cd815d85126b5a81c3310e84238b6c8889ce7
 
 build:
   number: 0
@@ -38,8 +38,7 @@ requirements:
     - defusedxml >=0.7.1,<0.8.0
     - pydantic-settings >=2.14.0
     - doclang >=0.7,<0.8
-    # missing upstream, https://github.com/docling-project/docling-core/pull/764
-    - requests
+    - requests >=2.34.2,<3.0.0
 tests:
   - python:
       imports:
@@ -47,7 +46,7 @@ tests:
       pip_check: true
       python_version:
         - ${{ python_min }}.*
-        - "*"
+        - '*'
   - script:
       - docling-view --help
       - docling-serialize --help

@@ -1,5 +1,5 @@
 context:
-  version: 2.105.0
+  version: 2.106.0
 
 package:
   name: docling-core
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/d/docling-core/docling_core-${{ version }}.tar.gz
-  sha256: 01db20cf35100b776f348602729c45516487536e60ffa4c81a6979aee91f7bb2
+  sha256: bad9feb0c33184ad53951ae74c3d3f01e18291f9bdc60beecfb61f2e4e3d790a
 
 build:
   number: 0
@@ -37,7 +37,7 @@ requirements:
     - latex2mathml >=3.77.0,<4.0.0
     - defusedxml >=0.7.1,<0.8.0
     - pydantic-settings >=2.14.0
-    - doclang >=0.8,<0.9
+    - doclang >=0.9,<0.10
     - requests >=2.34.2,<3.0.0
 tests:
   - python:

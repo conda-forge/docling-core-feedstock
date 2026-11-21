@@ -1,18 +1,18 @@
 context:
-  version: 2.108.0
+  version: "2.108.0"
 
 package:
   name: docling-core
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/d/docling-core/docling_core-${{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/d/docling-core/docling_core-${{ version }}.tar.gz
   sha256: 14176b28ec993584207b3b84dcc0cbd1c6f258cf66e2621f4fcee00d3301ab2b
 
 build:
   number: 0
   noarch: python
-  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  script: ${{ PYTHON }} -m pip install . -vv
   python:
     entry_points:
       - docling-view = docling_core.cli.view:app
